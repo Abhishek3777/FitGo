@@ -3,7 +3,9 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
-
+import mealRoutes from "./routes/mealRoutes.js";
+import { protect } from "./middleware/authMiddleware.js";
+import workoutRoutes from "./routes/workoutRoutes.js";
 dotenv.config();
 connectDB();
 
@@ -15,6 +17,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth", authRoutes);
+app.use("/", mealRoutes);
+app.use("/workouts", workoutRoutes);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running on ${process.env.PORT}`);
