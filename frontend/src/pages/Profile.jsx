@@ -77,7 +77,7 @@ export default function Profile() {
           <Form.Item label="Age">
             <Input
               placeholder="Age"
-              value={profile.age}
+              value={profile.age || ""}
               onChange={(e) => setProfile({ ...profile, age: e.target.value })}
             />
           </Form.Item>

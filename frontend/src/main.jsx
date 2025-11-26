@@ -11,6 +11,8 @@ import Dashboard from "./pages/Dashboard";
 import Navbar from "./components/Navbar";
 import WorkoutLogger from "./pages/WorkoutLogger";
 import WorkoutHistory from "./pages/WorkoutHistory";
+import AISuggestion from "./pages/AISuggestion";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
 
@@ -23,6 +25,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/profile" element={<Profile />} />
         <Route path="/workouts" element={<WorkoutLogger />} />
         <Route path="/workouts/history" element={<WorkoutHistory />} />
+        <Route path="/ai" element={<AISuggestion />} />
       </Routes>
     </BrowserRouter>
 
