@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, Input, Button, Typography, message } from "antd";
+import API from '../api';
 
 const { Title } = Typography;
 
@@ -10,7 +11,7 @@ export default function AddMeal({ reloadMeals }) {
 
   const search = async () => {
     try {
-      console.log("TOKEN:", localStorage.getItem("token"));
+     
       const res = await axios.get(`http://localhost:8000/meals?q=${query}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       });

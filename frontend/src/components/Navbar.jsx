@@ -51,7 +51,7 @@ export default function Navbar() {
       <Header
         style={{
           height: "62px",
-          background: "#0f172a",
+          background: "#008578",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -68,7 +68,7 @@ export default function Navbar() {
           style={{
             fontSize: "22px",
             fontWeight: "700",
-            color: "#38bdf8",
+            color: "#e2e8f0",
             display: "flex",
             gap: "8px",
             alignItems: "center",
@@ -76,7 +76,7 @@ export default function Navbar() {
           }}
         >
           <FireOutlined style={{ fontSize: "24px" }} />
-          FitGo
+          AthletiQ
         </div>
 
         {/* DESKTOP MENU */}

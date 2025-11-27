@@ -12,7 +12,9 @@ import Navbar from "./components/Navbar";
 import WorkoutLogger from "./pages/WorkoutLogger";
 import WorkoutHistory from "./pages/WorkoutHistory";
 import AISuggestion from "./pages/AISuggestion";
-import ProtectedRoute from "./components/ProtectedRoute";   // ⭐ ADD THIS
+import ProtectedRoute from "./components/ProtectedRoute"; 
+import Hero from "./pages/Hero";
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -23,6 +25,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         {/* PUBLIC ROUTES */}
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Hero />} />
 
         {/* PROTECTED ROUTES */}
         <Route 
