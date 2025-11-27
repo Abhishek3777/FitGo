@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Card, Input, Button, Form, Typography, message } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const { Title } = Typography;
 
@@ -10,7 +11,7 @@ export default function Register() {
     email: "",
     password: "",
   });
-
+const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
@@ -18,6 +19,7 @@ export default function Register() {
     try {
       const res = await axios.post("http://localhost:8000/auth/register", form);
       message.success("User registered successfully!");
+      navigate("/login");
     } catch (err) {
       message.error("Registration failed: " + err.message);
     } finally {

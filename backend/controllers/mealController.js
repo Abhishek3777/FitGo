@@ -1,5 +1,7 @@
 import axios from "axios";
 import Meal from "../models/mealModel.js";
+import dotenv from "dotenv";
+dotenv.config();
 
 export const getCalories = async (req, res) => {
   try {
