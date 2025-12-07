@@ -13,12 +13,12 @@ export default function AICoach() {
         setSummary("");
 
         try {
-            const res = await axios.post("http://localhost:8000/api/ai/summary");
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/ai/summary`);
 
             const text = res.data?.summary || "No summary available.";
             setSummary(text);
             console.log(text);
-            
+
             message.success("AI Summary Generated!");
 
         } catch (err) {
