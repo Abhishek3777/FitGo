@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, Input, Button, Typography, message } from "antd";
-import API from '../api';
 
 const { Title } = Typography;
 
@@ -11,19 +10,20 @@ export default function AddMeal({ reloadMeals }) {
 
   const search = async () => {
     try {
-     
-      const res = await axios.get(`http://localhost:8000/meals?q=${query}`, {
+
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/meals?q=${query}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
       });
       setFood(res.data);
-    } catch {
+    } catch (err) {
+      console.log(err.message);
       message.error("Food not found");
     }
   };
 
   const saveMeal = async () => {
     try {
-      await axios.post("http://localhost:8000/meals", {
+      await axios.post(`${import.meta.env.VITE_API_URL}/meals`, {
         name: food.name || query,
         quantity: query,
         calories: food.calories,

@@ -38,7 +38,7 @@ export default function TodayMeals() {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.get("http://localhost:8000/meals/today", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/meals/today`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

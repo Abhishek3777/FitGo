@@ -10,7 +10,7 @@ export default function WorkoutHistory() {
 
   const fetchWorkouts = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/workouts", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/workouts`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

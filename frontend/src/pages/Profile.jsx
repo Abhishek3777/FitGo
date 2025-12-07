@@ -19,7 +19,7 @@ export default function Profile() {
 
   const loadProfile = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/auth/profile", {
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/auth/profile`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -39,7 +39,7 @@ export default function Profile() {
 
   const updateProfile = async () => {
     try {
-      await axios.put("http://localhost:8000/auth/profile", profile, {
+      await axios.put(`${import.meta.env.VITE_API_URL}/auth/profile`, profile, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

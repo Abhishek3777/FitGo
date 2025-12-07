@@ -50,7 +50,7 @@ export default function WorkoutLogger() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/workouts",
+        `${import.meta.env.VITE_API_URL}/workouts`,
         {
           exercise,
           sets: cleanedSets,

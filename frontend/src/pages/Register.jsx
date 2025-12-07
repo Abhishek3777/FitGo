@@ -17,7 +17,7 @@ const navigate = useNavigate();
   const handleSubmit = async () => {
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:8000/auth/register", form);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, form);
       message.success("User registered successfully!");
       navigate("/login");
     } catch (err) {
