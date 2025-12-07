@@ -16,7 +16,7 @@ router.get("/profile", protect, async (req, res) => {
 
 // Update profile
 router.put("/profile", protect, async (req, res) => {
-  const updated = await User.findByIdAndUpdate(req.userId, req.body, {
+  const updated = await User.findByIdAndUpdate(req.user.id, req.body, {
     new: true,
   }).select("-password");
 
