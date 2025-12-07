@@ -4,9 +4,9 @@ import { addMeal, getCalories, getTodayMeals } from "../controllers/mealControll
 
 const router = express.Router();
 
-router.get("/meals",  protect, getCalories);
+router.get("/",  protect, getCalories);
 
-router.post("/meals", protect, addMeal);
-router.get("/meals/today", protect, getTodayMeals);
+router.post("/", protect, addMeal);
+router.get("/today", protect, getTodayMeals);
 
 export default router;
