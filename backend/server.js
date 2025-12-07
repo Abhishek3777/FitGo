@@ -12,13 +12,17 @@ connectDB();
 
 const app = express();
 
-// CORS FIRST
 app.use(cors({
-  origin: ["http://localhost:5173", "https://fitgo-frontend.onrender.com"],
+  origin: [
+    "http://localhost:5173",
+    "https://fitgo-frontend.onrender.com",
+    "https://fit-go-git-main-kumar-abhisheks-projects-816e9513.vercel.app"
+  ],
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 }));
+
 
 
 
